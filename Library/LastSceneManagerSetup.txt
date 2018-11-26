@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/SiqiZ_RabbitDodge.unity
+  isLoaded: 1
+  isActive: 1
