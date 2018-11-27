@@ -10,12 +10,15 @@ public class SiZh_PlayerController : MonoBehaviour {
     public AudioClip eatClip;
     private int count;
     public Text countText;
+    public Text winText;
+    public Text loseText;
     // Use this for initialization
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         count = 0;
         setCountText();
+        StartCoroutine(Timer());
     }
 
     // Update is called once per frame
@@ -72,11 +75,50 @@ public class SiZh_PlayerController : MonoBehaviour {
 
             setCountText();
         }
+        else if (other.gameObject.CompareTag("Rock"))
+        {
+            count = count - 100;
+
+            setCountText();
+        }
     }
 
     void setCountText()
     {
         countText.text = "Points: " + count.ToString();
+        if (count >= 10)
+        {
+            winText.text = "You win!";
+        }
+        else if (count < 0)
+        {
+            loseText.text = "You lose!";
+        }
+    }
+
+    IEnumerator Timer()
+    {
+        loseText.text = "Dodge and catch donuts, you have 10 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 9 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 8 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 7 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 6 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 5 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 4 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 3 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 2 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Dodge and catch donuts, you have 1 seconds";
+        yield return new WaitForSeconds(1);
+        loseText.text = "Time is over";
     }
 
 }
