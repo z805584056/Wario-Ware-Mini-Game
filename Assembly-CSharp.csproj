@@ -61,9 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SiqiZ_Scripts\PlayerController.cs" />
-    <Compile Include="Assets\SiqiZ_Scripts\RabbitDead.cs" />
-    <Compile Include="Assets\SiqiZ_Scripts\RockCrack.cs" />
+    <Compile Include="Assets\SiZh_Scripts\SiZh_PlayerController.cs" />
+    <Compile Include="Assets\SiZh_Scripts\SiZh_RabbitDead.cs" />
+    <Compile Include="Assets\SiZh_Scripts\SiZh_RockCrack.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Resources/Github/Wario-Ware-Mini-Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
