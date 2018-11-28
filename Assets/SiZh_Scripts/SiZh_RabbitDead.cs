@@ -25,4 +25,5 @@ public class SiZh_RabbitDead : MonoBehaviour {
             PlaySound();
         }
     }
+
 }

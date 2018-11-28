@@ -12,6 +12,7 @@ public class SiZh_PlayerController : MonoBehaviour {
     public Text countText;
     public Text winText;
     public Text loseText;
+    public Text timerText;
     // Use this for initialization
     void Start()
     {
@@ -89,36 +90,50 @@ public class SiZh_PlayerController : MonoBehaviour {
         if (count >= 10)
         {
             winText.text = "You win!";
+          //  StartCoroutine(ByeAfterDelay(2));
         }
         else if (count < 0)
         {
-            loseText.text = "You lose!";
+            loseText.text = "You die!";
         }
     }
 
     IEnumerator Timer()
     {
-        loseText.text = "Dodge and catch donuts, you have 10 seconds";
+        timerText.text = "Dodge and catch donuts, you have 10 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 9 seconds";
+        timerText.text = "Dodge and catch donuts, you have 9 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 8 seconds";
+        timerText.text = "Dodge and catch donuts, you have 8 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 7 seconds";
+        timerText.text = "Dodge and catch donuts, you have 7 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 6 seconds";
+        timerText.text = "Dodge and catch donuts, you have 6 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 5 seconds";
+        timerText.text = "Dodge and catch donuts, you have 5 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 4 seconds";
+        timerText.text = "Dodge and catch donuts, you have 4 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 3 seconds";
+        timerText.text = "Dodge and catch donuts, you have 3 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 2 seconds";
+        timerText.text = "Dodge and catch donuts, you have 2 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Dodge and catch donuts, you have 1 seconds";
+        timerText.text = "Dodge and catch donuts, you have 1 seconds";
         yield return new WaitForSeconds(1);
-        loseText.text = "Time is over";
+        timerText.text = "Time is over";
+
+        if (count < 10)
+        {
+            loseText.text = "You lose!";
+        }
     }
 
+  /*  IEnumerator ByeAfterDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        GameLoader.gameOn = false;
+    }
+*/
 }
