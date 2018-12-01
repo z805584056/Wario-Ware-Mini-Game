@@ -78,9 +78,8 @@ public class SiZh_PlayerController : MonoBehaviour {
         }
         else if (other.gameObject.CompareTag("Rock"))
         {
-            count = count - 100;
-
-            setCountText();
+            loseText.text = "You die!";
+            //  StartCoroutine(ByeAfterDelay(2));
         }
     }
 
@@ -90,12 +89,10 @@ public class SiZh_PlayerController : MonoBehaviour {
         if (count >= 10)
         {
             winText.text = "You win!";
-          //  StartCoroutine(ByeAfterDelay(2));
+            //GameLoader.AddScore(count);
+            //  StartCoroutine(ByeAfterDelay(2));
         }
-        else if (count < 0)
-        {
-            loseText.text = "You die!";
-        }
+
     }
 
     IEnumerator Timer()
@@ -121,7 +118,8 @@ public class SiZh_PlayerController : MonoBehaviour {
         timerText.text = "Dodge and catch donuts, you have 1 seconds";
         yield return new WaitForSeconds(1);
         timerText.text = "Time is over";
-
+        //GameLoader.AddScore(count);
+        //  StartCoroutine(ByeAfterDelay(2));
         if (count < 10)
         {
             loseText.text = "You lose!";
